@@ -80,11 +80,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Home Baker Islamabad — Your Favourite Islamabadian Home Baker" },
       { name: "description", content: "Custom cakes, cupcakes & desserts baked fresh with pyaar in Islamabad & Rawalpindi. Order on WhatsApp or Instagram DM." },
       { name: "author", content: "Home Baker Islamabad" },
-      { property: "og:title", content: "Home Baker Islamabad — Custom Cakes in Islamabad & Rawalpindi" },
-      { property: "og:description", content: "Boutique home-baked cakes for birthdays, anniversaries & custom occasions. Made fresh to order with pyaar." },
+      { property: "og:title", content: "Home Baker Islamabad — Your Favourite Islamabadian Home Baker" },
+      { property: "og:description", content: "Custom cakes, cupcakes & desserts baked fresh with pyaar in Islamabad & Rawalpindi. Order on WhatsApp or Instagram DM." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@sarahh_bakers" },
+      { name: "twitter:title", content: "Home Baker Islamabad — Your Favourite Islamabadian Home Baker" },
+      { name: "twitter:description", content: "Custom cakes, cupcakes & desserts baked fresh with pyaar in Islamabad & Rawalpindi. Order on WhatsApp or Instagram DM." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2d9f3701-2e89-450c-b1a6-ab598a822493/id-preview-370b28f9--d166f264-db77-48b7-ba91-68e40e194c81.lovable.app-1783947084620.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2d9f3701-2e89-450c-b1a6-ab598a822493/id-preview-370b28f9--d166f264-db77-48b7-ba91-68e40e194c81.lovable.app-1783947084620.png" },
     ],
     links: [
       {
