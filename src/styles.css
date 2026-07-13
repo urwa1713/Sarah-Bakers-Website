@@ -63,25 +63,45 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  /* Brand: cream #FAF3E7, rose #D8A7A0, chocolate #3B2A22, gold #C9A15C */
+  --cream: oklch(0.962 0.018 82);
+  --cream-deep: oklch(0.928 0.024 78);
+  --rose: oklch(0.756 0.055 25);
+  --rose-soft: oklch(0.86 0.035 25);
+  --chocolate: oklch(0.28 0.036 45);
+  --chocolate-soft: oklch(0.42 0.045 45);
+  --gold: oklch(0.735 0.106 78);
+  --gold-bright: oklch(0.82 0.12 82);
+
+  --background: var(--cream);
+  --foreground: var(--chocolate);
+  --card: oklch(0.985 0.012 82);
+  --card-foreground: var(--chocolate);
+  --popover: oklch(0.985 0.012 82);
+  --popover-foreground: var(--chocolate);
+  --primary: var(--chocolate);
+  --primary-foreground: var(--cream);
+  --secondary: var(--rose-soft);
+  --secondary-foreground: var(--chocolate);
+  --muted: var(--cream-deep);
+  --muted-foreground: var(--chocolate-soft);
+  --accent: var(--gold);
+  --accent-foreground: var(--chocolate);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.88 0.03 65);
+  --input: oklch(0.88 0.03 65);
+  --ring: var(--gold);
+
+  --gradient-hero: radial-gradient(ellipse at 50% 20%, oklch(0.98 0.018 82) 0%, var(--cream) 50%, var(--cream-deep) 100%);
+  --gradient-gold: linear-gradient(135deg, var(--gold) 0%, var(--gold-bright) 50%, var(--gold) 100%);
+  --shadow-soft: 0 20px 60px -20px oklch(0.28 0.036 45 / 0.25);
+  --shadow-gold: 0 0 30px oklch(0.735 0.106 78 / 0.35), 0 20px 50px -20px oklch(0.28 0.036 45 / 0.4);
+  --shadow-rim-gold: 0 0 0 1px oklch(0.735 0.106 78 / 0.4), 0 25px 60px -20px oklch(0.28 0.036 45 / 0.35), 0 0 40px oklch(0.735 0.106 78 / 0.25);
+
+  --font-display: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -140,5 +160,71 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+@theme inline {
+  --color-cream: var(--cream);
+  --color-cream-deep: var(--cream-deep);
+  --color-rose: var(--rose);
+  --color-rose-soft: var(--rose-soft);
+  --color-chocolate: var(--chocolate);
+  --color-chocolate-soft: var(--chocolate-soft);
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+@utility gold-rim {
+  box-shadow: var(--shadow-rim-gold);
+}
+
+@utility text-gradient-gold {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility perspective-scene {
+  perspective: 1400px;
+  transform-style: preserve-3d;
+}
+
+@keyframes cake-spin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+@keyframes flame-flicker {
+  0%, 100% { transform: translateX(-50%) scale(1) rotate(-2deg); opacity: 1; }
+  50% { transform: translateX(-50%) scale(1.08, 0.94) rotate(3deg); opacity: 0.92; }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(6deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (pointer: fine) {
+  .cursor-frosting, .cursor-frosting * {
+    cursor: none !important;
   }
 }
