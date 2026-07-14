@@ -1,28 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/site/Hero";
 import { About } from "@/components/site/About";
-import { Menu } from "@/components/site/Menu";
-import { Gallery } from "@/components/site/Gallery";
 import { HowToOrder } from "@/components/site/HowToOrder";
 import { Reviews } from "@/components/site/Reviews";
-import { Footer } from "@/components/site/Footer";
-import { CustomCursor } from "@/components/site/CustomCursor";
+import { CategoryCards } from "@/components/site/CategoryCards";
+import { PageTransition } from "@/components/site/PageTransition";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Home Baker Islamabad — Your Favourite Islamabadian Home Baker" },
+      { name: "description", content: "Boutique custom cakes, cupcakes & desserts baked fresh with pyaar in Islamabad & Rawalpindi. Explore our wedding, birthday, custom and seasonal collections." },
+    ],
+  }),
   component: Index,
 });
 
 function Index() {
   return (
-    <main className="min-h-screen bg-[var(--cream)] text-[var(--chocolate)]">
-      <CustomCursor />
+    <PageTransition>
       <Hero />
+      <CategoryCards />
       <About />
-      <Menu />
-      <Gallery />
       <HowToOrder />
       <Reviews />
-      <Footer />
-    </main>
+    </PageTransition>
   );
 }
