@@ -10,19 +10,7 @@ export function Hero() {
       <div aria-hidden className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full border border-[var(--gold)]/20" />
       <div aria-hidden className="pointer-events-none absolute -right-32 bottom-10 h-72 w-72 rounded-full border border-[var(--rose)]/25" />
 
-      <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-6 pt-8">
-        <div className="font-display text-xl tracking-tight text-[var(--chocolate)]">
-          Home Baker <span className="text-gradient-gold">Islamabad</span>
-        </div>
-        <div className="hidden gap-8 text-xs uppercase tracking-[0.2em] text-[var(--chocolate-soft)] md:flex">
-          <a href="#menu" className="hover:text-[var(--gold)]">Menu</a>
-          <a href="#gallery" className="hover:text-[var(--gold)]">Gallery</a>
-          <a href="#order" className="hover:text-[var(--gold)]">How to order</a>
-          <a href="#contact" className="hover:text-[var(--gold)]">Contact</a>
-        </div>
-      </nav>
-
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-6 pb-20 pt-10 md:grid-cols-2 md:pt-16 md:pb-28">
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-6 pb-20 pt-28 md:grid-cols-2 md:pt-32 md:pb-28">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
