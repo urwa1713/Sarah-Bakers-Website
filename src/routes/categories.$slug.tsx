@@ -73,7 +73,7 @@ function CategoryPage() {
       <section className="bg-[var(--cream)] py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {category.images.map((src, i) => (
+            {category.images.map((src: string, i: number) => (
               <SectionReveal key={src} delay={(i % 6) * 0.05}>
                 <button onClick={() => setActive(i)} className="perspective-scene group block w-full text-left">
                   <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--card)] transition-all duration-500 group-hover:-translate-y-2 group-hover:gold-rim" style={{ boxShadow: "var(--shadow-soft)" }}>
